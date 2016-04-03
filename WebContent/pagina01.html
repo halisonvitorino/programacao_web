@@ -22,7 +22,8 @@
 		paragrafo_1 {color:white;}
 		paragrafo_1 {font-family: verdana;}
 		paragrafo_1 {font-size : 20px;}
-		paragrafo_1 {text-align: left;}
+		paragrafo_1 {text-align: left;
+					 position:relative;}
 			
 		body {background-image: url(resources/img/Rally-mapa.jpg),url(resources/img/rally_7.png), url(resources/img/Imagem_pagina_2.jpg);}	
 		body {background-repeat:no-repeat, no-repeat, no-repeat;}   
@@ -36,55 +37,29 @@
 		aside {left: 1040px;}
 		aside {top: 100px;}  	
 		
-		menu_1 {height:190px;}
+		menu_1 {height:280px;}
     	menu_1 {width:340px;}
     	menu_1 {background: rgba(1, 1, 0, 0.6);}
     	menu_1 {padding:5px;}
     	menu_1 {position: absolute;} 
 		menu_1 {left: 1065px;}
-		menu_1 {top: 200px;}
+		menu_1 {top: 170px;}
 					
-				input{width:100%;
-					  padding: 5px 5px; 
-					  height:10px;
-    				  width:220px;
-    				  position:absolute;
-    				  border: 2px solid red;
-    				  border-radius: 4px;}
-					
-				/*senha {height:20px;}
-    			senha {width:220px;}
-    			senha {background:rgba(0, 1, 1, 1.0);}
-    			senha {padding:5px;}
-    			senha {position:absolute;} 
-				senha {left:1170px;}
-				senha {top:305px;}*/
-		
+				input{width:100%;					
+					  height:20px;
+    				  width:310px;
+    				  position:relative;
+    				  left:10px;    				  
+    				  border: 1px solid black;
+    				  border-radius: 8px;}
+										
 		menu_2 {height:190px;}
     	menu_2 {width:340px;}
     	menu_2 {background: rgba(1, 1, 0, 0.6);}
     	menu_2 {padding:5px;}
     	menu_2 {position: absolute;} 
 		menu_2 {left: 1065px;}
-		menu_2 {top: 450px;}
-		
-			login_2 {height:20px;}
-    		login_2 {width:220px;}
-    		login_2 {background:rgba(0, 1, 1, 1.0);}
-    		login_2 {padding:5px;}
-    		login_2 {position:absolute;} 
-			login_2 {left:1170px;}
-			login_2 {top:508px;}
-		
-			senha_2 {height:20px;}
-    		senha_2 {width:220px;}
-    		senha_2 {background:rgba(0, 1, 1, 1.0);}
-    		senha_2 {padding:5px;}
-    		senha_2 {position:absolute;} 
-			senha_2 {left:1170px;}
-			senha_2 {top:555px;}
-		
-		
+		menu_2 {top: 600px;}
     	
 	</style>
 </head>
@@ -103,8 +78,11 @@
 	 		<p>USUÁRIO</p>
 	 			<form>
 	 			<input type="texto" id="nome" name="nome"></input>
-	 			</form>
+	 			</form>	 			
 	 		<p>SENHA</p>
+	 			<form>
+	 			<input type="texto" id="senha" name="senha"></input>
+	 			</form>
 	 	</paragrafo_1>
 	 </menu_1>
 	 
