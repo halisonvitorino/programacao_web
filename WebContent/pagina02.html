@@ -12,25 +12,26 @@
 		titulo {font-family:verdana;}
 		titulo {font-weight:bold;
 				font-size : 18px;}
-		
-		paragrafo_1 {color:white;}
-		paragrafo_1 {font-family: verdana;}
-		paragrafo_1 {font-size : 20px;}
-		paragrafo_1 {text-align: left;
-					 position:relative;
-					 padding:5px}
 			
 		body {background-image: url(resources/img/Rally-mapa.jpg),url(resources/img/rally_7.png), url(resources/img/Imagem_pagina_2.jpg);}	
 		body {background-repeat:no-repeat, no-repeat, no-repeat;}   
 		body {background-position: 1040px 107px, 340px 135px, 320px 100px;}
 						
 			aside {height:690px;}
-	    	aside {width:400px;}
+	    	aside {width:390px;}
 	    	aside {background: rgba(0, 0, 0, 0.0);}
 	    	aside {padding:5px;}
 	    	aside {position: absolute;} 
 			aside {left: 1040px;}
-			aside {top: 90px;}  	
+			aside {top: 100px;}
+			
+									.basic option {background-repeat:repeat;
+											      background-position: 1040px 107px;
+												  padding-left:30px;}
+											select#pilotos option [value="AS"] {background-image:url(resources/img/bandeira1.png);}
+											select#pilotos option [value="NP"] {background-image:url(flags/india.png);}
+											select#pilotos option [value="MS"] {background-image:url(flags/england.png);}
+											select#pilotos option [value="RB"] {background-image:url(flags/france.png);}  	
 		
 				fundo_menu_escolha {height:400px;
 							  		width:340px;
@@ -50,7 +51,8 @@
 							              font-family:verdana;   				  
 				    				  	  border: 3px solid black;
 				    				  	  border-radius: 8px;}
-							              		  
+				    				  	  															
+																		              		  
 						    		    .botao_2{
 						    		    	  padding:5px 5px;					
 											  height:35px;
@@ -78,12 +80,12 @@
 	 </aside>
 	 	 
 	 <fundo_menu_escolha>
-	 	<select class="basic" onchange="window.open(this.value)">
-	 	  <option value="/resources/img/bandeira1.png" selected="selected" ></option>
-          <option value="WebContent/pagina01.html" >Ayrton Senna</option>
-          <option value="Nelson Piquet" >Nelson Piquet</option>
-          <option value="Michael Shuemaker">Michael Shuemaker</option>
-          <option value="Rubens Barrichello" >Rubens Barrichello</option>
+	 	<select name="pilotos" id="pilotos" class="basic">
+		 	  <option value=" " selected="selected" >Escolha seu piloto</option>
+	          <option value="AS" onchange="showValue(this.value)" >Ayrton Senna</option>
+	          <option value="NP" >Nelson Piquet</option>
+	          <option value="MS">Michael Shuemaker</option>
+	          <option value="RB" >Rubens Barrichello</option>
       	</select>
       	  <a href="#" class="botao_2">OK</a>
       	  
