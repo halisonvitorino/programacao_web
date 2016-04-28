@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+grafico.Caption = "<html><head><script type='text/javascript' src='https://www.google.com/jsapi'></script><script type='text/javascript'> 
+google.load('visualization', '1', {packages:['gauge']}); 
+google.setOnLoadCallback(drawChart); function drawChart() { 
+var data = new google.visualization.DataTable(); 
+data.addColumn('string', 'Label'); data.addColumn('number', 'Value'); data.addRows(3); data.setValue(0, 0, 'RRPEInfo'); 
+data.setValue(0, 1, 80); 
+data.setValue(1, 0, 'CPU'); 
+data.setValue(1, 1, 55); 
+data.setValue(2, 0, 'Network'); 
+data.setValue(2, 1, 68); 
+var chart = new 
+google.visualization.Gauge(document.getElementById('chart div')); 
+var options = {width: 400, height: 120, red
+</body>
+</html>

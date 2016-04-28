@@ -99,13 +99,9 @@
       	</select>
       	  <a href="#" class="botao_2">OK</a>
       	  
-     
-	     <div id="AS"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/as.jpg"/></div>
-	      	
+         <div id="AS"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/as.jpg"/></div>
 	     <div id="NP"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/np.jpg"/></div>
-	      	
 	     <div id="MS"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/ms.jpg"/></div>
-	      	
 	     <div id="RB"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/rb.jpg"/></div>
       	  
     </fundo_menu_escolha> 	  
@@ -114,7 +110,7 @@
 		<script>
 			var select = document.getElementById("pilotos");
 			var formularios = document.querySelectorAll('.formulario');
-			select.onchange = function () {for (var i = 0; i <formularios.length; i++) formularios[i].style.display = 'none';
+			select.onchange = function () {for (var i = 0; i<formularios.length; i++) formularios[i].style.display = 'none';
 		    var divID = select.options[select.selectedIndex].value;
 		    var div = document.getElementById(divID);
 		    div.style.display = 'block';};
