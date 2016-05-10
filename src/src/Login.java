@@ -30,13 +30,13 @@ public class Login extends HttpServlet {
 		if (request.getParameter("usuario") != null && request.getParameter("senha") != null) {
 			try {
 				dao = new LoginDAO();
-				usuario = dao.validaLogin(request.getParameter("nome"));
+				usuario = dao.validaLogin(request.getParameter("usuario"));
 
 				if (usuario.getSenha().equals(request.getParameter("senha"))) {
 					System.out.println("Usuário \"" + usuario.getUsuario() + "\" logado com sucesso!");
 					
 					session.setAttribute("usuarioLogado", usuario);
-					request.setAttribute("nome", usuario);
+					request.setAttribute("usuario", usuario);
 					pagina = "pagina02.html";
 					System.out.println(pagina);
 				} else {
