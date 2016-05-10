@@ -1,4 +1,4 @@
-package ucb;
+package src;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ucb.Usuario;
-import ucb.LoginDAO;
+import src.Usuario;
+import src.LoginDAO;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
