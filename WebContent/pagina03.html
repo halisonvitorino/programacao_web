@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Super Rally</title>
+<style type="text/css">
+
+titulo {
+	color: red;
+	text-align: center;
+	font-family: verdana;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+body {
+	background-image: url(resources/img/Rally-mapa.jpg),url(resources/img/rally_7.png), url(resources/img/Imagem_pagina_2.jpg);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 1040px 107px, 340px 135px, 320px 100px;
+}
+
+aside {
+	height: 690px;
+	width: 390px;
+	background: rgba(0, 0, 0, 0.0);
+	padding: 5px;
+	position: absolute;
+	left: 1040px;
+	top: 100px;
+}
+
+fundo_menu_escolha {
+	height: 400px;
+	width: 340px;
+	background: rgba(1, 1, 0, 0.6);
+	padding: 5px;
+	position: absolute;
+	left: 1065px;
+	top: 170px;
+}
+
+select.basic {
+	width: 280px;
+	height: 35px;
+	top: 10px;
+	left: 10px;
+	position: relative;
+	padding: 5px 5px;
+	font-size: 5px;
+	font-family: verdana;
+	border: 3px solid black;
+	border-radius: 8px;
+}
+
+.formulario {
+	top: 60px;
+	left: 1px;
+	position: relative;
+	padding: 5px 5px;
+}
+
+.botao_2 {
+	padding: 5px 5px;
+	height: 35px;
+	width: 100px;
+	position: relative;
+	left: 50px;
+	top: 5px;
+	background: white;
+	color: black;
+	font-size: 16px;
+	font-family: verdana;
+	font-weight: bold border: 1px solid black;
+	border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+	<aside> 
+		<titulo>
+			<h1>
+				<marquee> <img src="resources/img/bandeira1.png"></img>Escolha seu Carro<img src="resources/img/bandeira1.png"></img></marquee>
+			</h1>
+		</titulo> </aside>
+
+	<fundo_menu_escolha> <select name="carros"
+	
+		id="carros" class="car">
+		<option value=" " selected="selected">Escolha seu Carro</option>
+		<option value="c1"> Ford	   </option>
+		<option value="c2"> VolksWagen </option>
+		<option value="c3"> Hyundai    </option>
+		<option value="c4"> Peugeot	   </option>
+	    </select> <a href="#" class="botao_2">OK</a>
+
+	<div id="c1" class="formulario" style="display: none"> &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/carro01.jpg" /></div>
+	<div id="c2" class="formulario" style="display: none"> &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/carro02.png" /></div>
+	<div id="c3" class="formulario" style="display: none"> &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/carro03.jpg" /></div>
+	<div id="c4" class="formulario" style="display: none"> &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/carro4.jpg" /></div>
+
+	</fundo_menu_escolha>
+
+	<script>
+		var select = document.getElementById("carros");
+		var formularios = document.querySelectorAll('.formulario');
+		select.onchange = function() {
+			for (var i = 0; i < formularios.length; i++)
+				formularios[i].style.display = 'none';
+			var divID = select.options[select.selectedIndex].value;
+			var div = document.getElementById(divID);
+			div.style.display = 'block';
+		};
+	</script>
+
+</body>
+</html>

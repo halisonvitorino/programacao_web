@@ -1,121 +1,136 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Super Rally</title>
 
 <style type="text/css">
-		
-		titulo {color:red;}
-		titulo {text-align:center;}
-		titulo {font-family:verdana;}
-		titulo {font-weight:bold;
-				font-size : 18px;}
-			
-		body {background-image: url(resources/img/Rally-mapa.jpg),url(resources/img/rally_7.png), url(resources/img/Imagem_pagina_2.jpg);}	
-		body {background-repeat:no-repeat, no-repeat, no-repeat;}   
-		body {background-position: 1040px 107px, 340px 135px, 320px 100px;}
-						
-			aside {height:690px;}
-	    	aside {width:390px;}
-	    	aside {background: rgba(0, 0, 0, 0.0);}
-	    	aside {padding:5px;}
-	    	aside {position: absolute;} 
-			aside {left: 1040px;}
-			aside {top: 100px;}
-			
-									.basic option {background-repeat:repeat;
-											      background-position: 1040px 107px;
-												  padding-left:30px;}
-											select#pilotos option [value="AS"] {background-image:url(resources/img/bandeira1.png);}
-											select#pilotos option [value="NP"] {background-image:url(flags/india.png);}
-											select#pilotos option [value="MS"] {background-image:url(flags/england.png);}
-											select#pilotos option [value="RB"] {background-image:url(flags/france.png);}  	
-		
-				fundo_menu_escolha {height:400px;
-							  		width:340px;
-							  		background: rgba(1, 1, 0, 0.6);
-							  		padding:5px;
-							  		position: absolute;
-							  		left: 1065px;
-							  		top: 170px;}
-							  		
-							select.basic {width: 280px;
-							              height: 35px;
-							              top: 10px;
-							              left:10px;
-							              position: relative;
-							              padding:5px 5px;
-							              font-size:16px;
-							              font-family:verdana;   				  
-				    				  	  border: 3px solid black;
-				    				  	  border-radius: 8px;}
-				    				  	  
-				    		.formulario { width: 260px;
-							              height: 285px;
-							              top: 40px;
-							              left:35px;
-							              position: relative;
-							              padding:5px 5px;
-							              border: 3px solid black;
-				    				  	  border-radius: 8px;
-				    				  	  border-color:red;}
-				    				  	  															
-																		              		  
-						    		    .botao_2{
-						    		    	  padding:5px 5px;					
-											  height:35px;
-						    				  width:100px;
-						    				  position:relative;
-						    				  left:15px;
-						    				  top:10px;
-						    				  background:white;
-											  color: black;
-											  font-size:14px;
-											  font-family:verdana;
-											  font-weight:bold   				  
-						    				  border: 1px solid black;
-						    				  border-radius: 8px;}
-    				  
-	</style>
+titulo {
+	color: red;
+	text-align: center;
+	font-family: verdana;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+body {
+	background-image: url(resources/img/Rally-mapa.jpg),url(resources/img/rally_7.png), url(resources/img/Imagem_pagina_2.jpg);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 1040px 107px, 340px 135px, 320px 100px;
+}
+
+aside {
+	height: 690px;
+	width: 390px;
+	background: rgba(0, 0, 0, 0.0);
+	padding: 5px;
+	position: absolute;
+	left: 1040px;
+	top: 100px;
+}
+
+fundo_menu_escolha {
+	height: 400px;
+	width: 340px;
+	background: rgba(1, 1, 0, 0.6);
+	padding: 5px;
+	position: absolute;
+	left: 1065px;
+	top: 170px;
+}
+
+select.basic {
+	width: 280px;
+	height: 35px;
+	top: 10px;
+	left: 10px;
+	position: relative;
+	padding: 5px 5px;
+	font-size: 16px;
+	font-family: verdana;
+	border: 3px solid black;
+	border-radius: 8px;
+}
+
+.formulario {
+	width: 260px;
+	height: 285px;
+	top: 40px;
+	left: 35px;
+	position: relative;
+	padding: 5px 5px;
+	border: 3px solid black;
+	border-radius: 8px;
+	border-color: red;
+}
+
+.botao_2 {
+	padding: 5px 5px;
+	height: 35px;
+	width: 100px;
+	position: relative;
+	left: 15px;
+	top: 10px;
+	background: white;
+	color: black;
+	font-size: 14px;
+	font-family: verdana;
+	font-weight: bold border: 1px solid black;
+	border-radius: 3px;
+}
+</style>
 </head>
 
-	<body>
-	
-	 <aside>
-	 	<titulo>
-	 		<h1><marquee><img src="resources/img/bandeira1.png"></img>Escolha seu competidor... <img src="resources/img/bandeira1.png"></img></marquee></h1>
-	 	</titulo>
-	 </aside>
-	 	 
-	 <fundo_menu_escolha>
-	 	<select name="pilotos" id="pilotos" class="basic">
-		 	  <option value=" " selected="selected" >Escolha seu piloto</option>
-	          <option value="AS" onchange="showValue(this.value)" >Ayrton Senna</option>
-	          <option value="NP" >Nelson Piquet</option>
-	          <option value="MS">Michael Shuemaker</option>
-	          <option value="RB" >Rubens Barrichello</option>
-      	</select>
-      	  <a href="#" class="botao_2">OK</a>
-      	  
-         <div id="AS"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/as.jpg"/></div>
-	     <div id="NP"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/np.jpg"/></div>
-	     <div id="MS"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/ms.jpg"/></div>
-	     <div id="RB"  class="formulario" style="display: none" > &nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/rb.jpg"/></div>
-      	  
-    </fundo_menu_escolha> 	  
-	 
-	 
-		<script>
-			var select = document.getElementById("pilotos");
-			var formularios = document.querySelectorAll('.formulario');
-			select.onchange = function () {for (var i = 0; i<formularios.length; i++) formularios[i].style.display = 'none';
-		    var divID = select.options[select.selectedIndex].value;
-		    var div = document.getElementById(divID);
-		    div.style.display = 'block';};
-		</script>
-      	  
-      	
-	</body>
+<body>
+	<aside> <titulo>
+	<h1>
+		<marquee> <img src="resources/img/bandeira1.png"></img>Escolha
+		seu competidor... <img src="resources/img/bandeira1.png"></img></marquee>
+	</h1>
+	</titulo> </aside>
+
+	<fundo_menu_escolha> <select name="pilotos"
+		id="pilotos" class="basic">
+		<option value=" " selected="selected">Escolha seu piloto</option>
+		<option value="AS" onchange="showValue(this.value)">Ayrton
+			Senna</option>
+		<option value="NP">Nelson Piquet</option>
+		<option value="MS">Michael Shuemaker</option>
+		<option value="RB">Rubens Barrichello</option>
+	</select> <a href="#" class="botao_2">OK</a>
+
+	<div id="AS" class="formulario" style="display: none">
+		&nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/as.jpg" />
+	</div>
+	<div id="NP" class="formulario" style="display: none">
+		&nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/np.jpg" />
+	</div>
+	<div id="MS" class="formulario" style="display: none">
+		&nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/ms.jpg" />
+	</div>
+	<div id="RB" class="formulario" style="display: none">
+		&nbsp;&nbsp;&nbsp;&nbsp; <img src="resources/img/rb.jpg" />
+	</div>
+
+	</fundo_menu_escolha>
+
+
+	<script>
+		var select = document.getElementById("pilotos");
+		var formularios = document.querySelectorAll('.formulario');
+		select.onchange = function() {
+			for (var i = 0; i < formularios.length; i++)
+				formularios[i].style.display = 'none';
+			var divID = select.options[select.selectedIndex].value;
+			var div = document.getElementById(divID);
+			div.style.display = 'block';
+		};
+	</script>
+
+
+</body>
 </html>

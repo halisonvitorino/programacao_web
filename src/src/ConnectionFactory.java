@@ -17,7 +17,7 @@ public class ConnectionFactory {
 				String sql = "jdbc:mysql://127.0.0.1:3306/rally";
 				
 				/* Tenta se conectar */
-				connection = DriverManager.getConnection(sql, "java", "java");
+				connection = DriverManager.getConnection(sql, "root", "java");
 			} catch (ClassNotFoundException e) {
 				throw new SQLException("CF: Driver não localizado!");
 			}
