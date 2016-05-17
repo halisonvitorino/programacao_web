@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import autentica.LoginDAO;
 import autentica.Usuario;
@@ -25,8 +26,9 @@ public class Login extends HttpServlet {
 		Usuario usuario = new Usuario();
 		LoginDAO dao;
 		String pagina = null;
-		System.out.println(getInitParameter("usuario"));
-		
+		System.out.println(request.getParameter("usuario"));
+		System.out.println(request.getParameter("senha"));
+
 		// Recebe parametros do usuario
 		if (request.getParameter("usuario") != null && request.getParameter("senha") != null) {
 			try {
@@ -34,7 +36,7 @@ public class Login extends HttpServlet {
 				usuario = dao.validaLogin(request.getParameter("usuario"));
 
 				if (usuario.getSenha().equals(request.getParameter("senha"))) {
-					System.out.println("Usuário \"" + usuario.getUsuario() + "\" logado com sucesso!");
+					System.out.println("Usuário \"" + usuario.getNome() + "\" logado com sucesso!");
 					
 					session.setAttribute("usuarioLogado", usuario);
 					request.setAttribute("usuario", usuario);
@@ -43,6 +45,7 @@ public class Login extends HttpServlet {
 				} else {
 					System.out.println("Dados informados invalidos!");
 					pagina = "pagina01.html";
+					
 				}
 
 			} catch (SQLException e) {

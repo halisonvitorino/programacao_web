@@ -119,6 +119,36 @@ menu_1 {
 	top: 170px;
 }
 
+
+
+menu_3 {
+	height: 340px;
+}
+
+menu_3 {
+	width: 340px;
+}
+
+menu_3 {
+	background: rgba(1, 1, 0, 0.6);
+}
+
+menu_3 {
+	padding: 5px;
+}
+
+menu_3 {
+	position: absolute;
+}
+
+menu_3 {
+	left: 1065px;
+}
+
+menu_3 {
+	top: 170px;
+}
+
 input {
 	height: 20px;
 	width: 210px;
@@ -132,7 +162,7 @@ input {
 .botao_1 {
 	padding: 1px 20px;
 	height: 20px;
-	width: 50px;
+	width: 60px;
 	position: absolute;
 	left: 245px;
 	background: white;
@@ -143,7 +173,7 @@ input {
 }
 
 menu_2 {
-	height: 250px;
+	height: 340px;
 }
 
 menu_2 {

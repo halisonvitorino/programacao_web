@@ -16,7 +16,7 @@ public class LoginDAO {
 
 	// Pesquisar usuario
 	public Usuario validaLogin(String usuario) {
-		String sql = "SELECT * FROM rally_usuarios WHERE usuario='" + usuario + "';";
+		String sql = "SELECT * FROM usuario WHERE nome='" + usuario + "';";
 
 		try {
 			List<Usuario> usuarios = new ArrayList<Usuario>();
@@ -25,11 +25,10 @@ public class LoginDAO {
 
 			while (rs.next()) {
 				Usuario usu = new Usuario();
-				usu.setId(rs.getLong("id"));
-				usu.setUsuario(rs.getString("usuario"));
+				
+				usu.setNome(rs.getString("nome"));
 				usu.setSenha(rs.getString("senha"));
-				usu.setPerfil(rs.getString("perfil"));
-
+				
 				usuarios.add(usu);
 
 				return usu;
