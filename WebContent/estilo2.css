@@ -1,0 +1,70 @@
+
+
+titulo {
+	color: red;
+	text-align: center;
+	font-family: verdana;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+body {
+	background-image: url(resources/img/Rally-mapa.jpg),url(resources/img/rally_7.png), url(resources/img/Imagem_pagina_2.jpg);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 1040px 107px, 340px 135px, 320px 100px;
+}
+
+aside {
+	height: 690px;
+	width: 390px;
+	background: rgba(0, 0, 0, 0.0);
+	padding: 5px;
+	position: absolute;
+	left: 1040px;
+	top: 100px;
+}
+
+fundo_menu_escolha {
+	height: 400px;
+	width: 340px;
+	background: rgba(1, 1, 0, 0.6);
+	padding: 5px;
+	position: absolute;
+	left: 1065px;
+	top: 170px;
+}
+
+select.basic {
+	width: 280px;
+	height: 35px;
+	top: 10px;
+	left: 10px;
+	position: relative;
+	padding: 5px 5px;
+	font-size: 5px;
+	font-family: verdana;
+	border: 3px solid black;
+	border-radius: 8px;
+}
+
+.formulario {
+	top: 60px;
+	left: 1px;
+	position: relative;
+	padding: 5px 5px;
+}
+
+.botao_2 {
+	padding: 5px 5px;
+	height: 35px;
+	width: 100px;
+	position: relative;
+	left: 50px;
+	top: 5px;
+	background: white;
+	color: black;
+	font-size: 16px;
+	font-family: verdana;
+	font-weight: bold border: 1px solid black;
+	border-radius: 8px;
+}

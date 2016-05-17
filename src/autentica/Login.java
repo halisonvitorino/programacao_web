@@ -1,4 +1,4 @@
-package src;
+package autentica;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import src.Usuario;
-import src.LoginDAO;
+import autentica.LoginDAO;
+import autentica.Usuario;
 
-@WebServlet("/login")
+@WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,8 @@ public class Login extends HttpServlet {
 		Usuario usuario = new Usuario();
 		LoginDAO dao;
 		String pagina = null;
-
+		System.out.println(getInitParameter("usuario"));
+		
 		// Recebe parametros do usuario
 		if (request.getParameter("usuario") != null && request.getParameter("senha") != null) {
 			try {
