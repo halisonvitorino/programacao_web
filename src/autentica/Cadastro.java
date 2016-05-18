@@ -25,6 +25,7 @@ public class Cadastro extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Usuario usuario = new Usuario();
 		LoginDAO dao;
+		
 		String pagina = null;
 		System.out.println(request.getParameter("nome"));
 		System.out.println(request.getParameter("senha"));
@@ -40,9 +41,7 @@ public class Cadastro extends HttpServlet {
 				usuario = dao.cadastraUser(request.getParameter("nome"),request.getParameter("senha"),request.getParameter("email"),request.getParameter("datanasci"), request.getParameter("telefone"));		
 					 
 					pagina = "pagina01.html";
-					
-				
-
+			
 			} catch (SQLException e) {
 
 				System.out.println("catch: " + pagina);
