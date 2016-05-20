@@ -26,12 +26,12 @@ public class CarrosDAO {
 	}
 
 	public void incluir(Carros car) throws RuntimeException, SQLException {
-		String sql = "insert into Carros (idCarros , nomeCarros , placaCarros) values (?,?,?)";
+		String sql = "insert into Carros (idCarros , nomeCarros , ufCarros) values (?,?,?)";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setInt(1, (int) car.getIdCarros());
 			stmt.setString(2, car.getNomeCarros());
-			stmt.setString(3, car.getPlacaCarros());
+			stmt.setString(3, car.getUfCarros());
 			stmt.execute();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -41,11 +41,11 @@ public class CarrosDAO {
 	}
 
 	public void alterar(Carros car) throws RuntimeException, SQLException {
-		String sql = "update Carros set nomeCarros=? , placaCarros=? where idCarros=?";
+		String sql = "update Carros set nomeCarros=? , ufCarros=? where idCarros=?";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setString(1, car.getNomeCarros());
-			stmt.setString(2, car.getPlacaCarros());
+			stmt.setString(2, car.getUfCarros());
 			stmt.setInt(3, (int) car.getIdCarros());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -80,7 +80,7 @@ public class CarrosDAO {
 	}
 
 	public void consultar(Carros car) throws RuntimeException, SQLException {
-		String sql = "select idCarros, nomeCarros, placaCarros from Carros where idCarros=?";
+		String sql = "select idCarros, nomeCarros, ufCarros from Carros where idCarros=?";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setInt(1, (int) car.getIdCarros());
@@ -88,7 +88,7 @@ public class CarrosDAO {
 			rs.next();
 			car.setIdCarros((Integer) rs.getInt("idCarros"));
 			car.setNomeCarros(rs.getString("nomeCarros"));
-			car.setPlacaCarros(rs.getString("placaCarros"));
+			car.setUfCarros(rs.getString("ufCarros"));
 			rs.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -98,7 +98,7 @@ public class CarrosDAO {
 	}
 
 	public void listar(List<Carros> lista) throws RuntimeException, SQLException {
-		String sql = "select idCarros, nomeCarros, placaCarros from Carros";
+		String sql = "select idCarros, nomeCarros, ufCarros from Carros";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			java.sql.ResultSet rs = stmt.executeQuery();
@@ -107,7 +107,7 @@ public class CarrosDAO {
 				mun = new Carros();
 				mun.setIdCarros((Integer) rs.getInt("idCarros"));
 				mun.setNomeCarros(rs.getString("nomeCarros"));
-				mun.setPlacaCarros(rs.getString("placaCarros"));
+				mun.setUfCarros(rs.getString("ufCarros"));
 				lista.add(mun);
 			}
 			rs.close();

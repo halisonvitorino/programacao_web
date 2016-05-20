@@ -42,7 +42,7 @@ public class AlterarCarros extends HttpServlet {
 				CarrosDAO regDAO = new CarrosDAO();
 				try {
 					regDAO.consultar(carros);
-					RequestDispatcher rd = request.getRequestDispatcher("/aula9_municipio/AlteracaoDeMunicipio.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("../AlteracaoDeCarro.jsp");
 					request.setAttribute("titulo", "Alteração de Município");
 					request.setAttribute("carros", carros);
 					rd.forward(request, response);
@@ -62,8 +62,8 @@ public class AlterarCarros extends HttpServlet {
 			Carros carros = new Carros();
 			carros.setIdCarros(new Integer(request.getParameter("idCarros")));
 			carros.setNomeCarros(new String(request.getParameter("nomeCarros")));
-			String placaCarros = new String(request.getParameter("placaCarros"));
-			carros.setPlacaCarros(placaCarros);
+			String ufCarros = new String(request.getParameter("ufCarros"));
+			carros.setUfCarros(ufCarros);
 			try {
 				CarrosDAO regDAO = new CarrosDAO();
 				try {

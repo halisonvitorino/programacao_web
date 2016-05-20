@@ -40,7 +40,7 @@ public class ServletCarro extends HttpServlet {
 				
 				registro.setIdCarros(new Integer(request.getParameter("idMunicipio")));
 				registro.setNomeCarros(new String(request.getParameter("nomeMunicipio")));
-				registro.setPlacaCarros(new String(request.getParameter("ufMunicipio")));
+				registro.setUfCarros(new String(request.getParameter("ufMunicipio")));
 				
 				regDAO.incluir(registro);
 				

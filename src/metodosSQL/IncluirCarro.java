@@ -40,7 +40,7 @@ public class IncluirCarro extends HttpServlet {
 		registro.setNomeCarros(new String(request.getParameter("nomeMunicipio")));
 		// registro.setUfMunicipio(new String(request.getParameter("ufMunicipio")));
 		String ufSel = new String(request.getParameter("uf"));
-		registro.setPlacaCarros(ufSel);
+		registro.setUfCarros(ufSel);
 		// for (UF uf : UF.values())
 		// if (ufSel.equals(uf.getCodigoUF()))
 		// municipio.setUfMunicipio(uf.getCodigoUF());

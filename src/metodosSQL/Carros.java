@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Carros implements Serializable {
 	private Integer idCarros;
 	private String nomeCarros;
-	private String placaCarros;
+	private String ufCarros;
 	
 	public Integer getIdCarros() {
 		return idCarros;
@@ -21,15 +21,15 @@ public class Carros implements Serializable {
 	public void setNomeCarros(String nomeCarros) {
 		this.nomeCarros = nomeCarros;
 	}
-	public String getPlacaCarros() {
-		return placaCarros;
+	public String getUfCarros() {
+		return ufCarros;
 	}
-	public void setPlacaCarros(String placaCarros) {
-		this.placaCarros = placaCarros;
+	public void setUfCarros(String placaCarros) {
+		this.ufCarros = ufCarros;
 	}
 	@Override
 	public String toString() {
-		return "[" + idCarros + " " + nomeCarros + "-" + placaCarros + "]";
+		return "[" + idCarros + " " + nomeCarros + "-" + ufCarros + "]";
 	}
 	public Carros() {
 		super();
