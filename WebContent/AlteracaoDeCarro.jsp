@@ -80,7 +80,7 @@
 			</fieldset>
 		</form>
 		<p>
-			<a href="../pagina01.html"><img src="../resources/img/voltar.gif" alt="<fmt:message key="geral.voltar"/>" width="42" height="42" border='0' /></a>
+			<a href="pagina05.html"><img src="resources/img/icon-voltar.png"	alt="Voltar" width="72" height="72" border='0' /></a>
 		</p>
 	</c:if>
 	
@@ -89,7 +89,7 @@
 	Carros carros = (Carros) request.getAttribute("carros");
 	if (carros == null) {
 	%>
-		<form action="../AlterarMunicipio" method="post">
+		<form action="../AlterarCarros" method="post">
 			IdCarros: <input type="text" name="idCarros"/> 
 			<input type="hidden" name="logica" value="consultar"/>
 			<input type="submit" value="Consultar"/>
@@ -100,6 +100,7 @@
 	<%
 	}else{
 	%>
+	
 		<form action="AlterarCarros" method="post" >
 			IdMunicipio: <input	type="text" name="idCarros" value="<%=carros.getIdCarros()%>" /><br />
 			<fmt:message key="carros.nome"/><input type="text" name="nomeCarros" value="<%=carros.getNomeCarros()%>" /><br />
@@ -107,7 +108,10 @@
 			<input type="hidden" name="logica" value="alterar"/>
 	   		<input type="submit" value="Alterar"/>
 		</form>
-		<P><a href=pagina05.html><fmt:message key="geral.voltar"/></a></P>
+		
+		<p>
+			<a href="pagina05.html"><img src="resources/img/icon-voltar.png"	alt="Voltar" width="72" height="72" border='0' /></a>
+		</p>
 	<%}%>
 	 	
 	 		
