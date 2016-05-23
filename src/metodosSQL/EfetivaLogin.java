@@ -33,7 +33,7 @@ public class EfetivaLogin extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("usuario", new String(usuario.getChaveUsuario()));
 					session.setAttribute("ipusuario", new String(request.getRemoteAddr()));
-					RequestDispatcher rd = request.getRequestDispatcher("corpo_index.html");
+					RequestDispatcher rd = request.getRequestDispatcher("pagina05.html");
 					rd.forward(request, response);
 				} else {
 					throw (new Exception("Login inválidos!"));
@@ -43,7 +43,7 @@ public class EfetivaLogin extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.sendRedirect("aula9_login/login.jsp");
+			response.sendRedirect("../pagina01.jsp");
 		}
 	}
 }

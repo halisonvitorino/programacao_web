@@ -36,8 +36,8 @@ public class IncluirCarro extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Carros registro = new Carros();
-		registro.setIdCarros(new Integer(request.getParameter("idMunicipio")));
-		registro.setNomeCarros(new String(request.getParameter("nomeMunicipio")));
+		registro.setIdCarros(new Integer(request.getParameter("idCarro")));
+		registro.setNomeCarros(new String(request.getParameter("nomeCarro")));
 		// registro.setUfMunicipio(new String(request.getParameter("ufMunicipio")));
 		String ufSel = new String(request.getParameter("uf"));
 		registro.setUfCarros(ufSel);
@@ -48,9 +48,9 @@ public class IncluirCarro extends HttpServlet {
 			CarrosDAO regDAO = new CarrosDAO();
 			try {
 				regDAO.incluir(registro);
-				RequestDispatcher rd = request.getRequestDispatcher("/aula9_municipio/RespostaConsultaMunicipio.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("../RespostaConsultaCarro.jsp");
 				request.setAttribute("titulo", "Inclusão de Carro");
-				request.setAttribute("municipio", registro);
+				request.setAttribute("carros", registro);
 				rd.forward(request, response);
 			} catch (Exception e) {
 				PrintWriter out = response.getWriter();

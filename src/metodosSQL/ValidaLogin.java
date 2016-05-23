@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebFilter(filterName = "/ValidaLogin", 
-servletNames = {"IncluirMunicipio", 
-		"AlterarMunicipio", 
-		"ExcluirMunicipio", 
-		"ConsultarMunicipio"},
-urlPatterns = {"/aula9_municipio/InclusaoDeMunicipio.jsp",
-		"/aula9_municipio/AlteracaoDeMunicipio.jsp",
-		"/aula9_municipio/ExclusaoDeMunicipio.jsp",
-		"/aula9_municipio/ConsultaDeMunicipio.jsp",
-		"/aula9_municipio/RespostaConsultaMunicipio.jsp",
-		"/aula9_municipio/RespostaListaMunicipio.jsp"})
+servletNames = {"IncluirCarro", 
+		"AlterarCarro", 
+		"ExcluirCarro", 
+		"ConsultarCarro"},
+urlPatterns = {"../InclusaoDeCarro.jsp",
+		"../AlteracaoDeCarro.jsp",
+		"../ExclusaoDeCarro.jsp",
+		"../ConsultaDeCarro.jsp",
+		"../RespostaConsultaCarro.jsp",
+		"../RespostaListaCarro.jsp"})
 public final class ValidaLogin implements Filter {
 
 	public ValidaLogin() {
@@ -44,7 +44,7 @@ public final class ValidaLogin implements Filter {
 			chain.doFilter(request, response);
 		} else {
 			HttpServletResponse response2 = (HttpServletResponse) response;
-			response2.sendRedirect("/Site_Rally/pagina01.html");
+			response2.sendRedirect("../pagina01.html");
 		}
 	}
 

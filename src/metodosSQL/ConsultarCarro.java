@@ -43,14 +43,14 @@ public class ConsultarCarro extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Carros carros = new Carros();
-		carros.setIdCarros(new Integer(request.getParameter("idMunicipio")));
+		carros.setIdCarros(new Integer(request.getParameter("idCarro")));
 		try {
 			CarrosDAO regDAO = new CarrosDAO();
 			try {
 				regDAO.consultar(carros);
-				RequestDispatcher rd = request.getRequestDispatcher("/aula9_municipio/RespostaConsultaMunicipio.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("../RespostaConsultaCarro.jsp");
 				request.setAttribute("titulo", "Consulta de Carros");
-				request.setAttribute("municipio", carros);
+				request.setAttribute("carros", carros);
 				rd.forward(request, response);
 			} catch (Exception e) {
 				PrintWriter out = response.getWriter();

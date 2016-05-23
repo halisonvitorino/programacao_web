@@ -43,7 +43,7 @@ public class AlterarCarros extends HttpServlet {
 				try {
 					regDAO.consultar(carros);
 					RequestDispatcher rd = request.getRequestDispatcher("../AlteracaoDeCarro.jsp");
-					request.setAttribute("titulo", "Alteração de Município");
+					request.setAttribute("titulo", "Alteração de Carro");
 					request.setAttribute("carros", carros);
 					rd.forward(request, response);
 				} catch (Exception e) {
@@ -68,7 +68,7 @@ public class AlterarCarros extends HttpServlet {
 				CarrosDAO regDAO = new CarrosDAO();
 				try {
 					regDAO.alterar(carros);
-					RequestDispatcher rd = request.getRequestDispatcher("/aula9_municipio/RespostaConsultaMunicipio.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("../RespostaConsultaCarro.jsp");
 					request.setAttribute("titulo", "Alteração de Carros");
 					request.setAttribute("carros", carros);
 					rd.forward(request, response);

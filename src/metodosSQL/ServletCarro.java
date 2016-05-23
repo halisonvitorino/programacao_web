@@ -38,13 +38,13 @@ public class ServletCarro extends HttpServlet {
 			try {
 				Carros registro = new Carros();
 				
-				registro.setIdCarros(new Integer(request.getParameter("idMunicipio")));
-				registro.setNomeCarros(new String(request.getParameter("nomeMunicipio")));
-				registro.setUfCarros(new String(request.getParameter("ufMunicipio")));
+				registro.setIdCarros(new Integer(request.getParameter("idCarro")));
+				registro.setNomeCarros(new String(request.getParameter("nomeCarro")));
+				registro.setUfCarros(new String(request.getParameter("uf")));
 				
 				regDAO.incluir(registro);
 				
-				RequestDispatcher rd = request.getRequestDispatcher("/municipio/RespostaConsultaMunicipio.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("../RespostaConsultaCarro.jsp");
 				request.setAttribute("carros", registro);
 				rd.forward(request, response);
 				
