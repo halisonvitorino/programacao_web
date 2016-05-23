@@ -33,6 +33,16 @@ fundo_menu_escolha {
 	top: 170px;
 }
 
+fundo_menu_escolha1 {
+	height: 400px;
+	width: 340px;
+	background: rgba(255, 255, 255, 1);
+	padding: 5px;
+	position: absolute;
+	left: 1065px;
+	top: 170px;
+}
+
 select.basic {
 	width: 280px;
 	height: 35px;

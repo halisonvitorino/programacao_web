@@ -37,7 +37,7 @@ public class AlterarCarros extends HttpServlet {
 		String alterar = new String(request.getParameter("logica"));
 		if (alterar.equals("consultar")) {
 			Carros carros = new Carros();
-			carros.setIdCarros(new Integer(request.getParameter("idMunicipio")));
+			carros.setIdCarros(new Integer(request.getParameter("idCarro")));
 			try {
 				CarrosDAO regDAO = new CarrosDAO();
 				try {
@@ -60,9 +60,9 @@ public class AlterarCarros extends HttpServlet {
 			}
 		} else if (alterar.equals("alterar")) {
 			Carros carros = new Carros();
-			carros.setIdCarros(new Integer(request.getParameter("idCarros")));
-			carros.setNomeCarros(new String(request.getParameter("nomeCarros")));
-			String ufCarros = new String(request.getParameter("ufCarros"));
+			carros.setIdCarros(new Integer(request.getParameter("idCarro")));
+			carros.setNomeCarros(new String(request.getParameter("nomeCarro")));
+			String ufCarros = new String(request.getParameter("uf"));
 			carros.setUfCarros(ufCarros);
 			try {
 				CarrosDAO regDAO = new CarrosDAO();

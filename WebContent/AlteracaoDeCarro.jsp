@@ -10,20 +10,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <fmt:setLocale value="pt_BR" />
-<link rel="stylesheet" type="text/css" href="../resources/css/styles.css" />
-<title><fmt:message key="municipio.titulo.alteracao"/></title>
+<link rel="stylesheet" type="text/css" href="estilo1.css"/>
+<title>Alteração de Município/></title>
 </head>
 
 <body>
-	<h1> Alteração </h1>
 	
+	
+	<aside> <titulo>
+	<h1>
+		<marquee> <img src="resources/img/bandeira1.png"></img>ALTERAÇÃO... 
+		<img src="resources/img/bandeira1.png"></img></marquee>
+	</h1>
+	</titulo> </aside>
+
+	<fundo_menu_escolha1> 
 	<c:if test="${carros == null}">
 		<form action="../AlterarCarros" method="post">
 			<fieldset>
-				<legend><fmt:message key="carros.legenda"/></legend>
+			<legend><fmt:message key="carro.legenda"/></legend>
 				
-				<label for="idCarros"><fmt:message key="carros.codigo"/></label> 
-				<input id="idCarros" type="text" name="idCarros" /> 
+				<label for="idMunicipio"><fmt:message key="carro.codigo"/></label> 
+				<input id="idCarro" type="text" name="idCarro" /> 
 				
 				<input type="hidden" name="logica" value="consultar" />
 				
@@ -32,27 +40,29 @@
 			</fieldset>
 		</form>
 		<p>
-			<a href="../pagina01.html"><img src="../resources/img/voltar.gif"	alt="Voltar" width="42" height="42" border='0' /></a>
+			<a href="pagina05.html"><img src="resources/img/icon-voltar.png"	alt="Voltar" width="72" height="72" border='0' /></a>
 		</p>
 	</c:if>
-	
-	<c:if test="${carros != null}">
-		<link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
+	 	
+	 	
+	 	
+	 	<c:if test="${carros != null}">
 		
-		<form action="AlterarCarros" method="post">
+		
+		<form action="../AlterarCarros" method="post">
 			<fieldset>
-				<legend><fmt:message key="carros.legenda"/></legend>
+				<legend><fmt:message key="carro.legenda"/></legend>
 				
-				<label for="idCarros"><fmt:message key="carros.codigo"/></label> 
-				<input id="idCarros" type="text" name="idCarros" value="${carros.idCarros}" /> 
+				<label for="idCarro"><fmt:message key="carro.codigo"/></label> 
+				<input id="idCarro" type="text" name="idCarro" value="${municipio.idMunicipio}" /> 
 				
-				<label for="nomeCarros"><fmt:message key="carros.nome"/></label>
-				<input id="nomeCarros" type="text" name="nomeCarros" value="${carros.nomeCarros}" />
+				<label for="nomeCarro"><fmt:message key="carro.nome"/></label>
+				<input id="nomeCarro" type="text" name="nomeCarro" value="${municipio.nomeMunicipio}" />
 				
-				<label for="uf"><fmt:message key="carros.uf"/></label> 
+				<label for="uf"><fmt:message key="carro.uf"/></label> 
 				<select id="uf" name="uf">
 					<%
-						Carros mun = (Carros) request.getAttribute("carros");
+						Carros mun = (Carros) request.getAttribute("municipio");
 							for (UF x : UF.values())
 								if (x.getCodigoUF().equals(mun.getUfCarros()))
 									out.println("<option value=" + x.getCodigoUF()
@@ -84,7 +94,9 @@
 			<input type="hidden" name="logica" value="consultar"/>
 			<input type="submit" value="Consultar"/>
 		</form>
-		<P><a href=../pagina05.html><fmt:message key="geral.voltar"/></a></P>
+		<p>
+			<a href="pagina05.html"><img src="resources/img/icon-voltar.png"	alt="Voltar" width="72" height="72" border='0' /></a>
+		</p>
 	<%
 	}else{
 	%>
@@ -97,5 +109,11 @@
 		</form>
 		<P><a href=pagina05.html><fmt:message key="geral.voltar"/></a></P>
 	<%}%>
+	 	
+	 		
+	</fundo_menu_escolha1>
+	
+		
+	
 </body>
 </html>

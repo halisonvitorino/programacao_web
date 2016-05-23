@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+  <display-name>JEE_JSP_JDBC</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <session-config>
+    <session-timeout>3</session-timeout>
+  </session-config>
+  
+  <display-name>MySQL DataSource Example</display-name>
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/PoolMydb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>messages</param-value>
+  </context-param>
+  
+  <servlet>
+    <description></description>
+    <display-name>PrimeiraServlet</display-name>
+    <servlet-name>PrimeiraServlet</servlet-name>
+    <servlet-class>aula3.PrimeiraServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrimeiraServlet</servlet-name>
+    <url-pattern>/PrimeiraServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>SegundaServlet</display-name>
+    <servlet-name>SegundaServlet</servlet-name>
+    <servlet-class>aula3.SegundaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SegundaServlet</servlet-name>
+    <url-pattern>/SegundaServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletContador</display-name>
+    <servlet-name>ServletContador</servlet-name>
+    <servlet-class>aula3.ServletContador</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContador</servlet-name>
+    <url-pattern>/ServletContador</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletCalculadora</display-name>
+    <servlet-name>ServletCalculadora</servlet-name>
+    <servlet-class>aula3.ServletCalculadora</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCalculadora</servlet-name>
+    <url-pattern>/ServletCalculadora</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>IdadeCasamento</display-name>
+    <servlet-name>IdadeCasamento</servlet-name>
+    <servlet-class>aula8.IdadeCasamento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IdadeCasamento</servlet-name>
+    <url-pattern>/IdadeCasamento</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>Calculadora</display-name>
+    <servlet-name>Calculadora</servlet-name>
+    <servlet-class>aula8.Calculadora</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Calculadora</servlet-name>
+    <url-pattern>/Calculadora</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Calculadora2</display-name>
+    <servlet-name>Calculadora2</servlet-name>
+    <servlet-class>aula8.Calculadora2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Calculadora2</servlet-name>
+    <url-pattern>/Calculadora2</url-pattern>
+  </servlet-mapping>
+
+</web-app>
