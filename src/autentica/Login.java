@@ -40,7 +40,7 @@ public class Login extends HttpServlet {
 					
 					session.setAttribute("usuarioLogado", usuario);
 					request.setAttribute("usuario", usuario);
-					pagina = "pagina05.html";
+					pagina = "pagina04.html";
 					System.out.println(pagina);
 				} else {
 					System.out.println("Dados informados invalidos!");
