@@ -35,6 +35,9 @@
 						<label for="nomeCarro"><fmt:message key="carro.nome"/></label> 
 						<input type="text" id="nomeCarro" name="nomeCarro" /> <br/>
 						
+						<label for="modeloCarro"><fmt:message key="carro.mod"/></label> 
+						<input type="text" id="modeloCarro"	name="modeloCarro" /> <br/>
+						
 						<label for="uf"><fmt:message key="carro.uf"/></label> 
 						<select id="uf" name="uf">
 							<%for (UF x : UF.values())

@@ -25,7 +25,7 @@
 	</titulo> </aside>
 
 	<fundo_menu_escolha1> 
-					<c:if test="${municipios != null}">
+					<c:if test="${carros != null}">
 						<h1 class="nivel-um">
 							<c:out value='${titulo}' />
 						</h1>
@@ -37,13 +37,15 @@
 								<tr>
 									<td><fmt:message key="carro.codigo"/></td>
 									<td><fmt:message key="carro.nome"/></td>
+									<td><fmt:message key="carro.mod"/></td>
 									<td><fmt:message key="carro.uf"/></td>
 								</tr>
-								<c:forEach var='item' items='${municipios}'>
+								<c:forEach var='item' items='${carros}'>
 									<tr>
-										<td><c:out value='${item.getValue().idMunicipio}' /></td>
-										<td><c:out value='${item.getValue().nomeMunicipio}' /></td>
-										<td><c:out value='${item.getValue().ufMunicipio}' /></td>
+										<td><c:out value='${item.getValue().idCarro}' /></td>
+										<td><c:out value='${item.getValue().nomeCarro}' /></td>
+										<td><c:out value='${item.getValue().nomeModelo}' /></td>
+										<td><c:out value='${item.getValue().ufCarro}' /></td>
 									</tr>
 								</c:forEach>
 							</table>
@@ -57,16 +59,17 @@
 						</p>
 					
 					
-				<P>Listagem de Municipios</P>
+				<P>Listagem de Carros</P>
 				<table>
 					<%List<Carros> registros = (List<Carros>) request.getAttribute("carros");%>
 				    <tr>
-				    	<td>Id</td><td>Nome</td><td>UF</td>
+				    	<td>Id</td><td>Nome</td><td>Modelo</td><td>UF</td>
 				 	</tr>
 				 	<%for (Carros carro : registros ) {	%>
 					     <tr>
 					     	<td><%out.println(carro.getIdCarros());%></td>
 						  	<td><%out.println(carro.getNomeCarros());%></td>
+						  	<td><%out.println(carro.getModeloCarros());%></td>
 						 	<td><%out.println(carro.getUfCarros());%></td>
 						 </tr>
 					<%}%>

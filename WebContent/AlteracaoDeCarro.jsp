@@ -59,6 +59,9 @@
 				<label for="nomeCarro"><fmt:message key="carro.nome"/></label>
 				<input id="nomeCarro" type="text" name="nomeCarro" value="${municipio.nomeMunicipio}" />
 				
+				<label for="modeloCarro"><fmt:message key="carro.mod"/></label>
+				<input id="modeloCarro" type="text" name="modeloCarro" value="${municipio.modeloCarro}" />
+				
 				<label for="uf"><fmt:message key="carro.uf"/></label> 
 				<select id="uf" name="uf">
 					<%
@@ -102,8 +105,9 @@
 	%>
 	
 		<form action="AlterarCarros" method="post" >
-			IdMunicipio: <input	type="text" name="idCarros" value="<%=carros.getIdCarros()%>" /><br />
+			IdCarro: <input	type="text" name="idCarros" value="<%=carros.getIdCarros()%>" /><br />
 			<fmt:message key="carros.nome"/><input type="text" name="nomeCarros" value="<%=carros.getNomeCarros()%>" /><br />
+			<fmt:message key="carros.mod"/><input type="text" name="modeloCarro" value="<%=carros.getModeloCarros()%>" /><br />
 			UF: <input type="text" name="ufCarros" value="<%=carros.getUfCarros() %>"/><br />
 			<input type="hidden" name="logica" value="alterar"/>
 	   		<input type="submit" value="Alterar"/>

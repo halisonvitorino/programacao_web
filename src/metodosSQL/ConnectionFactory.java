@@ -25,7 +25,7 @@ public class ConnectionFactory {
 		} catch (ClassNotFoundException e) {
 			throw new SQLException(e);
 		}
-		return DriverManager.getConnection("jdbc:mysql://localhost/mydb","root","java");
+		return DriverManager.getConnection("jdbc:mysql://localhost/rally","root","java");
 
 	}
 

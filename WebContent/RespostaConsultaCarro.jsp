@@ -39,6 +39,10 @@
 									<td><c:out value='${carro.nomeCarro}' /></td>
 								</tr>
 								<tr>
+									<td><fmt:message key="carro.mod"/></td>
+									<td><c:out value='${carro.modeloCarro}' /></td>
+								</tr>
+								<tr>
 									<td><fmt:message key="carro.uf"/></td>
 									<td><c:out value='${carro.ufCarro}' /></td>
 								</tr>

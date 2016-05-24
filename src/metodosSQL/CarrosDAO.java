@@ -26,12 +26,13 @@ public class CarrosDAO {
 	}
 
 	public void incluir(Carros car) throws RuntimeException, SQLException {
-		String sql = "insert into Carros (idCarros , nomeCarros , ufCarros) values (?,?,?)";
+		String sql = "insert into carros (idCarro , nomeCarro , modeloCarro, ufCarro) values (?,?,?,?)";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setInt(1, (int) car.getIdCarros());
 			stmt.setString(2, car.getNomeCarros());
-			stmt.setString(3, car.getUfCarros());
+			stmt.setString(3, car.getModeloCarros());
+			stmt.setString(4, car.getUfCarros());
 			stmt.execute();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -41,12 +42,13 @@ public class CarrosDAO {
 	}
 
 	public void alterar(Carros car) throws RuntimeException, SQLException {
-		String sql = "update Carros set nomeCarros=? , ufCarros=? where idCarros=?";
+		String sql = "update carros set nomeCarro=? , modeloCarro=?, ufCarro=?  where idCarro=?";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setString(1, car.getNomeCarros());
 			stmt.setString(2, car.getUfCarros());
-			stmt.setInt(3, (int) car.getIdCarros());
+			stmt.setString(3, car.getModeloCarros());
+			stmt.setInt(4, (int) car.getIdCarros());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -57,7 +59,7 @@ public class CarrosDAO {
 
 	public void excluir(Carros car) throws RuntimeException, SQLException {
 		java.sql.PreparedStatement stmt = connection
-				.prepareStatement("delete from Carros where idCarros = ?");
+				.prepareStatement("delete from carros where idCarro = ?");
 		try {
 			stmt.setInt(1, (int) car.getIdCarros());
 			stmt.execute();
@@ -80,15 +82,16 @@ public class CarrosDAO {
 	}
 
 	public void consultar(Carros car) throws RuntimeException, SQLException {
-		String sql = "select idCarros, nomeCarros, ufCarros from Carros where idCarros=?";
+		String sql = "select idCarro, nomeCarro, modeloCarro, ufCarro from carros where idCarro=?";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setInt(1, (int) car.getIdCarros());
 			java.sql.ResultSet rs = stmt.executeQuery();
 			rs.next();
-			car.setIdCarros((Integer) rs.getInt("idCarros"));
-			car.setNomeCarros(rs.getString("nomeCarros"));
-			car.setUfCarros(rs.getString("ufCarros"));
+			car.setIdCarros((Integer) rs.getInt("idCarro"));
+			car.setNomeCarros(rs.getString("nomeCarro"));
+			car.setModeloCarros(rs.getString("modeloCarro"));
+			car.setUfCarros(rs.getString("ufCarro"));
 			rs.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -98,16 +101,17 @@ public class CarrosDAO {
 	}
 
 	public void listar(List<Carros> lista) throws RuntimeException, SQLException {
-		String sql = "select idCarros, nomeCarros, ufCarros from Carros";
+		String sql = "select idCarro, nomeCarro, modeloCarro, ufCarro from carros";
 		java.sql.PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			java.sql.ResultSet rs = stmt.executeQuery();
 			Carros mun;
 			while (rs.next()) {
 				mun = new Carros();
-				mun.setIdCarros((Integer) rs.getInt("idCarros"));
-				mun.setNomeCarros(rs.getString("nomeCarros"));
-				mun.setUfCarros(rs.getString("ufCarros"));
+				mun.setIdCarros((Integer) rs.getInt("idCarro"));
+				mun.setNomeCarros(rs.getString("nomeCarro"));
+				mun.setModeloCarros(rs.getString("modeloCarro"));
+				mun.setUfCarros(rs.getString("ufCarro"));
 				lista.add(mun);
 			}
 			rs.close();

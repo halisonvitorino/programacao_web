@@ -38,6 +38,7 @@ public class IncluirCarro extends HttpServlet {
 		Carros registro = new Carros();
 		registro.setIdCarros(new Integer(request.getParameter("idCarro")));
 		registro.setNomeCarros(new String(request.getParameter("nomeCarro")));
+		registro.setModeloCarros(new String(request.getParameter("modeloCarro")));
 		// registro.setUfMunicipio(new String(request.getParameter("ufMunicipio")));
 		String ufSel = new String(request.getParameter("uf"));
 		registro.setUfCarros(ufSel);
