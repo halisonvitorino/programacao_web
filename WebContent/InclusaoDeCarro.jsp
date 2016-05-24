@@ -25,15 +25,15 @@
 	<fundo_menu_escolha1> 
 				<h1 class="nivel-um"><fmt:message key="carro.titulo.inclusao"/></h1>
 			
-				<form action="../IncluirMunicipio" method="post">
+				<form action="../IncluirCarro" method="post">
 					<fieldset>
 						<legend><fmt:message key="carro.legenda"/></legend>
 						
-						<label for="idMunicipio"><fmt:message key="carro.codigo"/></label> 
-						<input type="text" id="idMunicipio"	name="idMunicipio" /> <br/>
+						<label for="idCarro"><fmt:message key="carro.codigo"/></label> 
+						<input type="text" id="idCarro"	name="idCarro" /> <br/>
 						
-						<label for="nomeMunicipio"><fmt:message key="carro.nome"/></label> 
-						<input type="text" id="nomeMunicipio" name="nomeMunicipio" /> <br/>
+						<label for="nomeCarro"><fmt:message key="carro.nome"/></label> 
+						<input type="text" id="nomeCarro" name="nomeCarro" /> <br/>
 						
 						<label for="uf"><fmt:message key="carro.uf"/></label> 
 						<select id="uf" name="uf">

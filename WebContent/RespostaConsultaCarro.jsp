@@ -45,7 +45,7 @@
 							</table>
 						</fieldset>
 					</c:if>
-					<c:if test="${municipio == null}">
+					<c:if test="${carro == null}">
 						<c:out value="<fmt:message key="geral.alertaDados"/>" />
 					</c:if>
 					<p>
